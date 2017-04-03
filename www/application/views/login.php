@@ -1,5 +1,5 @@
 <?php 
-	$this->load->view('header.php',['bodyClasses'=>['hold-transition','login-page']]);
+	$this->load->view('header.php',['bodyClasses'=>['hold-transition','login-page'],'title'=>'User Login']);
 	$this->load->helper('form');
 ?>
 <div class="login-box">
