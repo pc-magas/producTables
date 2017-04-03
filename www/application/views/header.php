@@ -18,20 +18,17 @@ $this->load->helper('url');
 		<script src="<?=base_url('/assets/js/jquery.min.js');?>"></script>
 		<script src="<?=base_url('/assets/js/bootstrap.min.js');?>"></script>
 		<?php
-			if(is_array($scripts)):
+			if(isset($scripts) && is_array($scripts)):
 				foreach($scripts as $script):
 		?>
 		<?php
 				endforeach;
 			endif;
 		?>
-	</head
-		class="<?php 
-			if(is_array($bodyClasses)) {
-				foreach ($bodyClasses as $class) {
-					echo $class;
-				}
-			}
-		?>"
-	>
+	</head class="<?php 
+				if(isset($bodyClasses) && is_array($bodyClasses)) {
+					foreach ($bodyClasses as $class) {
+						echo $class;
+					}
+				}?>">
 	<body>
