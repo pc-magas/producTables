@@ -17,7 +17,8 @@ class Migration_CreateUserTable extends CI_Migration
 				 	'username'=>[
 				 				  'type'=>'VARCHAR',
 				 				  'constraint'=>30,
-				 				  'null'=>false
+				 				  'null'=>false,
+				 				  'unique'=>TRUE
 				 				],
 					'password'=>[
 									'type'=>'VARCHAR',
@@ -28,7 +29,7 @@ class Migration_CreateUserTable extends CI_Migration
 		
 		$this->dbforge->add_field($fields);
 		$this->dbforge->add_key('id',true);
-		$this->dbforge->create_table($this->table);
+		$this->dbforge->create_table($this->table);		
 	}
 	
 	public function down()
