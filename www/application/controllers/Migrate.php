@@ -21,4 +21,5 @@ class Migrate extends CI_Controller {
 			show_error($this->migration->error_string());
 		}
 	}
+
 }
