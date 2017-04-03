@@ -12,7 +12,7 @@ $this->load->helper('url');
 		<title>User Login</title>
 		
 		<link rel="stylesheet" href="<?=base_url('/assets/css/bootstrap.min.css'); ?>">
-		<link rel="stylesheet" href="<?=base_url('/assets/css/adminLTE.min.css'); ?>">
+		<link rel="stylesheet" href="<?=base_url('/assets/css/AdminLTE.min.css'); ?>">
 		<link rel="stylesheet" href="<?=base_url('/assets/css/skin-green.min.css'); ?>">
 		
 		<script src="<?=base_url('/assets/js/jquery.min.js');?>"></script>
