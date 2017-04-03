@@ -19,7 +19,7 @@ class Login extends CI_Controller
 	
 	private function getLoginPage()
 	{
-		echo $this->load->view('login');
+		$this->load->view('login');
 	}
 	
 	private function loginAction()
