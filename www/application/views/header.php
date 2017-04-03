@@ -25,10 +25,10 @@ $this->load->helper('url');
 				endforeach;
 			endif;
 		?>
-	</head class="<?php 
+	</head>
+	<body class="<?php 
 				if(isset($bodyClasses) && is_array($bodyClasses)) {
 					foreach ($bodyClasses as $class) {
 						echo $class;
 					}
 				}?>">
-	<body>
