@@ -2,7 +2,7 @@
 
 if ( ! defined('BASEPATH')) exit("No direct script access allowed");
 
-class Login extends CI_Controller
+class User extends CI_Controller
 {
 	public function __construct()
 	{
@@ -12,7 +12,7 @@ class Login extends CI_Controller
 	
 	public function index()
 	{
-		$this->getLoginPage();
+		$this->load->view('login');
 	}
 	
 	public function login()
@@ -25,13 +25,12 @@ class Login extends CI_Controller
 			$this->load->helper('url');
 			redirect('panel');
 		} catch(Exception $e) {
-			redirect('login/index');
+			redirect('user/index');
 		}
 	}
 	
-	private function getLoginPage()
+	public function logout()
 	{
-		$this->load->view('login');
-	}	
-	
+		
+	}
 }
