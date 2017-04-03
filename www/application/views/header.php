@@ -26,4 +26,4 @@ $this->load->helper('url');
 			endif;
 		?>
 	</head>
-	<body class="<?php if(isset($bodyClasses) && is_array($bodyClasses)) { implode(' ',$bodyClasses); }?>">
+	<body class="<?php if(isset($bodyClasses) && is_array($bodyClasses)) { echo implode(' ',$bodyClasses); }?>">
