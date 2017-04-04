@@ -5,16 +5,16 @@ class Panel extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('ModUser','user');
+		$this->load->model('ModProducts','products');
 	}
 
 	public function index()
 	{
-		$this->load->model('ModUser','user');
 		try {
-			//I load this particular model here because it will be the only place that will be used.
 			$user=$this->user->getLogedinUsername();
 			$this->load->view('panel',['username'=>$user]);
-		} catch(LoginException $l){
+		} catch(LoginException $l) {
 			//This is the only place in this controller that url helper will be used
 			$this->load->helper('url');
 			redirect('user');
@@ -23,6 +23,11 @@ class Panel extends CI_Controller
 
 	public function getProducts()
 	{
-
+			if(!$this->model->isLogedIn()) {
+				echo $this->load->view('ajax_403_view');
+			} else {
+				$products=$this->products->get();
+				$this->load->view('json_view',['data'=>['data'=>$products]]);
+			}
 	}
 }

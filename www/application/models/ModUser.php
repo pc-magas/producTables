@@ -6,7 +6,6 @@ require_once APPPATH.'/third_party/LoginException.php';
 
 class ModUser extends CI_Model
 {
-	const USER_TABLE='user';
 
 	public function __construct()
 	{
@@ -31,7 +30,7 @@ class ModUser extends CI_Model
 		isNonEmptyStringParam($username,'username');
 		isNonEmptyStringParam($password,'password');
 
-		$this->db->select('id,password')->where('username',$username)->from(self::USER_TABLE);
+		$this->db->select('id,password')->where('username',$username)->from(USER_TABLE);
 		$query=$this->db->get();
 
 		if($query->num_rows()==0){
