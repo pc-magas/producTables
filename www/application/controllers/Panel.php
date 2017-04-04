@@ -28,7 +28,7 @@ class Panel extends CI_Controller
 
 	public function getProducts()
 	{
-			if(!$this->model->isLogedIn()) {
+			if(!$this->user->isLogedIn()) {
 				echo $this->load->view('ajax_403_view');
 			} else {
 				$products=$this->products->get();

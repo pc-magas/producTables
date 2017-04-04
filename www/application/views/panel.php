@@ -48,6 +48,19 @@
 	<div class="content-wrapper">
 	    <div class="container">
 	    	<h1 class="text-center">Products Table</h1>
+				<div class="box box-default">
+					<div class="box-body">
+						<table id="data" class="table table-bordered table-hover dataTable">
+							<thead>
+								<th>Title</th>
+								<th>Price</th>
+								<th>% Discount</th>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
 	    </div>
     </div>
 <?php

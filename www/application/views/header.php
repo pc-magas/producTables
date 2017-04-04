@@ -20,7 +20,7 @@ $this->load->helper('url');
 			if(isset($stylesheets) && is_array($stylesheets)):
 				foreach($stylesheets as $stylesheet):
 		?>
-					<link rel="stylesheet" href="<?=$stylesheet;?>"></script>
+					<link rel="stylesheet" href="<?=$stylesheet;?>">
 		<?php
 				endforeach;
 			endif;
