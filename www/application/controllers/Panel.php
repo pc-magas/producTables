@@ -29,7 +29,7 @@ class Panel extends CI_Controller
 	public function getProducts()
 	{
 			if(!$this->user->isLogedIn()) {
-				echo $this->load->view('ajax_403_view');
+				$this->load->view('ajax_403_view');
 			} else {
 				$products=$this->products->get();
 				$this->load->view('json_view',['data'=>['data'=>$products]]);
