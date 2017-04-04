@@ -9,7 +9,7 @@ server {
 
     # avoid caching by proxies
     add_header        Cache-Control private;
-    
+
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_pass   unix:<%= ENV['OPENSHIFT_PHP_DIR'] %>/run/php-fpm.sock;
@@ -20,6 +20,23 @@ server {
 
         # uncomment to export all environment variables to fastcgi
         #include        <%= ENV['OPENSHIFT_REPO_DIR'] %>/config/nginx.d/export_env;
+    }
+
+    # canonicalize codeigniter url end points
+    # if your default controller is something other than "welcome" you should change the following
+    if ($request_uri ~* ^(/welcome(/index)?|/index(.php)?)/?$)
+    {
+      rewrite ^(.*)$ / permanent;
+    }
+    # removes trailing "index" from all controllers
+    if ($request_uri ~* index/?$)
+    {
+      rewrite ^/(.*)/index/?$ /$1 permanent;
+    }
+    # removes trailing slashes (prevents SEO duplicate content issues)
+    if (!-d $request_filename)
+    {
+      rewrite ^/(.+)/$ /$1 permanent;
     }
 
     # avoid unnecessary log
