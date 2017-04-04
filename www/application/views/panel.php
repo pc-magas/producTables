@@ -19,7 +19,7 @@
 			        		<li class="dropdown user user-menu">
 			        			<a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
 			        				<span class="user-image"><span class="glyphicon glyphicon-user"></span></span>
-			        				<span>User</span>
+			        				<span>Welcome <?=$username?></span>
 			        			</a>
 
 				        		<ul class="dropdown-menu">
