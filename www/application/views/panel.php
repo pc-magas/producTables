@@ -1,5 +1,15 @@
 <?php
-	$this->load->view('header.php',['bodyClasses'=>['hold-transition','skin-green','layout-top-nav'],'title'=>'Admin Panel']);
+
+	$this->load->helper('url');
+	$headerViewParamsArray=[
+													'bodyClasses'=>['hold-transition','skin-green','layout-top-nav'],
+													'title'=>'Admin Panel',
+													'stylesheets'=>[base_url('/assets/css/datatables.min.css')],
+													'scripts'=>[base_url('/assets/js/datatables.js'),base_url('/index.php/panel/javascript')]
+												];
+
+	$this->load->view('header.php',$headerViewParamsArray);
+
 	$this->load->helper('url');
 ?>
 	<!-- Top Navbar -->

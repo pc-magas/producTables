@@ -21,6 +21,11 @@ class Panel extends CI_Controller
 		}
 	}
 
+	public function javascript()
+	{
+		$this->load->view('javascript_view');
+	}
+
 	public function getProducts()
 	{
 			if(!$this->model->isLogedIn()) {
