@@ -7,7 +7,7 @@
     	<p><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;ProducTables&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></p>
   	</div>
 	<div class="login-box-body">
-		<?=form_open('login/login',['method'=>'post']);?>
+		<?=form_open('user/login',['method'=>'post']);?>
 			<p class="login-box-msg">Sign in to start your session</p>
 			
 			<div class="form-group has-feedback">

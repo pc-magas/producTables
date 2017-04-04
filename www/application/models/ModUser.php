@@ -71,7 +71,7 @@ class ModUser extends CI_Model
 	public function getLogedinUsername()
 	{
 		if($this->isLogedIn()){
-			return $this->session->get_userdata('username');
+			return $this->session->userdata['username'];
 		} else {
 			throw new LoginException('User is not logedin');
 		}

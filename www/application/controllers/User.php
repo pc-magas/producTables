@@ -8,29 +8,35 @@ class User extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('ModUser','user');
+		$this->load->helper('url');
 	}
-	
+
 	public function index()
 	{
-		$this->load->view('login');
+		if($this->user->isLogedIn()){
+			redirect('panel');
+		} else {
+			$this->load->view('login');
+		}
 	}
-	
+
 	public function login()
 	{
 		$username=$this->input->post('username');
 		$password=$this->input->post('password');
-		
+
+
 		try {
 			$this->user->login($username,$password);
-			$this->load->helper('url');
 			redirect('panel');
 		} catch(Exception $e) {
 			redirect('user/index');
 		}
 	}
-	
+
 	public function logout()
 	{
-		
+		$this->user->logout();
+		redirect('user');
 	}
 }
